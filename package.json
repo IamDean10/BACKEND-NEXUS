@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "generate:nexus": "ts-node --transpile-only src/nexus/generate.ts",
+    "dev": "ts-node-dev ./src/index.ts",
+    "start": "npx ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/cors": "^2.8.10",
+    "@types/json-stringify-safe": "^5.0.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.11.2",
+    "@types/randomstring": "^1.1.8",
+    "gts": "^3.1.0",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^1.1.7",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "lib-mongoose": "file:./lib-mongoose",
+    "apollo-server-express": "^2.25.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^10.0.2",
+    "graphql": "^15.5.0",
+    "json-stringify-safe": "^5.0.1",
+    "morgan": "^1.10.0",
+    "nexus": "^1.3.0",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.13.3"
+  }
+}
